@@ -18,7 +18,8 @@ namespace ExamScoreAnalyser
             int min = 0; //the minimum number
             int sum = 0; //this will act as total.  
             int mean = 0; //this will act as the average.
-            string[] data = File.ReadAllLines("C:\\Users\\Holden\\Desktop\\text files\\scores.txt");
+            int tempC = 0; // this is a counter.
+            string[] data = File.ReadAllLines("C:\\Users\\Holden\\source\\repos\\Exam Score Analyzer\\files\\Scores.txt");
             int[] grades = new int[data.Length];
            
             for (int i = 0; i < data.Length; i++)
@@ -57,7 +58,21 @@ namespace ExamScoreAnalyser
             }
 
             Console.WriteLine($"the median is: {median}");
+            Console.WriteLine("enter a grade:");
+            string userI = Console.ReadLine();
+            for (int i = 0; i < data.Length; i++)
+            {
+                Array.Sort(grades);
 
+                
+                if (userI == data[i].ToString())
+                {
+                    tempC++;
+                }
+               
+                
+            }
+            Console.WriteLine($"{userI} is in the data {tempC} times");
         }
         
     }
